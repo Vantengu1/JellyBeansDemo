@@ -15,7 +15,7 @@ import RecipesPage from "./pages/RecipesPage";
 
 const router = createBrowserRouter([
     {
-      path: 'JellyBeansProject',
+      path: 'JellyBeansDemo',
       element: <Layout />,
       loader: Loader,
       children: [
