@@ -6,8 +6,6 @@ import { useEffect, useState } from "react";
 
 const Recipes= () => {
 
-    const [initialRecipe, setInitialRecipe] = useState<null | RecipeData[]>(null);
-
     const [updateRecipe, setUpdateRecipe] = useState<null | RecipeData[]>(null);
 
     const [isLoading, setIsLoading] = useState(false); //создаём сосотояние чтобы показать что загрузка идёт
@@ -20,7 +18,6 @@ const Recipes= () => {
             const req = await fetch("https://jellybellywikiapi.onrender.com/api/recipes?pageIndex=1&pageSize=50");
             const data = await req.json();
             setIsLoading(false);
-            setInitialRecipe(data.items);
             setUpdateRecipe(data.items);
         }
         catch (error) {

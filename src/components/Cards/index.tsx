@@ -1,16 +1,10 @@
 import style from "./style.module.css";
 import Card from "./Card";
 import { Bean } from "../../types/bean";
-import { FC, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 
-type Props = {
-    filterValue: string; 
-}
+const Cards = () => {
 
-const Cards: FC<Props> = ({filterValue}) => {
-
-    const [initialBeans, setInitialBeans] = useState<null | Bean[]>(null);
-    
     const [updateBeans, setUpdateBeans] = useState<null | Bean[]>(null);
 
     const [isLoading, setIsLoading] = useState(false); //создаём сосотояние чтобы показать что загрузка идёт
@@ -23,7 +17,6 @@ const Cards: FC<Props> = ({filterValue}) => {
             const req = await fetch("https://jellybellywikiapi.onrender.com/api/Beans?pageIndex=1&pageSize=100");
             const data = await req.json();
             setIsLoading(false);
-            setInitialBeans(data.items);
             setUpdateBeans(data.items);
         } 
         catch (error) {
@@ -36,17 +29,7 @@ const Cards: FC<Props> = ({filterValue}) => {
     useEffect(() => {
         getData();
     }, [])
-    
-    useEffect(() => {
-        if (filterValue) {
-            const newArray = initialBeans?.filter((item) => 
-                item.flavorName.includes(filterValue)
-            );
-            newArray && setUpdateBeans(newArray)
-        } else {
-            setUpdateBeans(initialBeans);
-        }
-    }, [filterValue]);
+
     return(
         <div className={style.container}>
             {isLoading && <p>...loading</p>} {/* если значение isLoading будет true (&&), тогда выводим страку <p>...loading</p> */}

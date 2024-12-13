@@ -6,8 +6,6 @@ import { useEffect, useState } from "react";
 
 const Histories= () => {
 
-    const [initialHistory, setInitialHistory] = useState<null | HistoryData[]>(null);
-
     const [updateHistory, setUpdateHistory] = useState<null | HistoryData[]>(null);
 
     const [isLoading, setIsLoading] = useState(false); //создаём сосотояние чтобы показать что загрузка идёт
@@ -20,7 +18,6 @@ const Histories= () => {
             const req = await fetch("https://jellybellywikiapi.onrender.com/api/mileStones?pageIndex=1&pageSize=50");
             const data = await req.json();
             setIsLoading(false);
-            setInitialHistory(data.items);
             setUpdateHistory(data.items);
         }
         catch (error) {

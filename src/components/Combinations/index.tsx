@@ -6,8 +6,6 @@ import { useEffect, useState } from "react";
 
 const Combinations= () => {
 
-    const [initialCombination, setInitialCombination] = useState<null | CombinationData[]>(null);
-
     const [updateCombination, setUpdateCombination] = useState<null | CombinationData[]>(null);
 
     const [isLoading, setIsLoading] = useState(false); //создаём сосотояние чтобы показать что загрузка идёт
@@ -20,7 +18,6 @@ const Combinations= () => {
             const req = await fetch("https://jellybellywikiapi.onrender.com/api/combinations?pageIndex=1&pageSize=50");
             const data = await req.json();
             setIsLoading(false);
-            setInitialCombination(data.items);
             setUpdateCombination(data.items);
         }
         catch (error) {

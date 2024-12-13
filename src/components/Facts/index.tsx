@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 
 const Facts= () => {
 
-    const [initialFact, setInitialFact] = useState<null | FactData[]>(null);
 
     const [updateFact, setUpdateFact] = useState<null | FactData[]>(null);
 
@@ -20,7 +19,6 @@ const Facts= () => {
             const req = await fetch("https://jellybellywikiapi.onrender.com/api/facts?pageIndex=1&pageSize=80");
             const data = await req.json();
             setIsLoading(false);
-            setInitialFact(data.items);
             setUpdateFact(data.items);
         }
         catch (error) {
