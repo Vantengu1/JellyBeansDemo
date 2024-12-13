@@ -1,0 +1,12 @@
+.container {
+    padding-top: 50px;
+    background: var(--background-page);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    & h1 {
+        font-size: 40px;
+        color: var(--red-color);
+        margin: 20px auto 30px auto;
+    }
+}

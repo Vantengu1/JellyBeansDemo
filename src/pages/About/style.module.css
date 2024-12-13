@@ -1,0 +1,147 @@
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    border-radius: 30px;
+    background-color: #EE9085;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+
+    & h2 {
+        color: var(--red-color);
+        margin: 20px 0;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    & .line {
+        height: 2px;
+        width: 97%;
+        margin: 0 auto;
+        background: var(--red-color);
+    }
+
+    & .grid_box {
+        margin: 20px auto;
+        max-width: 1200px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        & li {
+            list-style: none;
+            width: 300px;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            & .number {
+                font-size: 34px;
+                color: var(--red-color);
+            }
+
+            & .text {
+                font-weight: 300;
+                color: var(--red-color);
+            }
+        }
+    }
+
+    & .link_site {
+        font-size: 18px;
+        color: brown;
+        margin-left: 30px;
+
+        & a {
+            color: var(--color);
+            font-weight: 600;
+            position: relative;
+        }
+        /* подчёркивание ссылки при наведении */
+        & a::before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--color);
+            transform: scaleX(0);
+            transform-origin: top left;
+            transition: transform 0.3s ease;
+        }
+
+        & a:hover::before {
+            transform: scaleX(1);
+        }
+    }
+
+    & .check {
+        margin: 10px 0 40px 30px;
+
+        & p {
+            font-size: 24px;
+            color: brown;
+        }
+
+        & .list_link {
+            display: flex;
+            flex-direction: column;
+            margin-left: 5px;
+
+            & li {
+                list-style: none;
+                padding-bottom: 3px;
+
+                & a {
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: var(--color);
+                    position: relative;
+                }
+                /* подчёркивание ссылки при наведении */
+                & a::before {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    width: 100%;
+                    height: 2px;
+                    bottom: 0;
+                    left: 0;
+                    background-color: var(--color);
+                    transform: scaleX(0);
+                    transform-origin: top left;
+                    transition: transform 0.3s ease;
+                }
+
+                & a:hover::before {
+                    transform: scaleX(1);
+                }
+            }
+        }
+    }
+
+    & div {
+        margin-left: 35px;
+        max-width: 600px;
+
+        & h3 {
+            font-size: 25px;
+            color: brown;
+            font-weight: 400;
+        }
+
+        & .text_block {
+            color: brown;
+
+            & a {
+                color: var(--color);
+            }
+        }
+    }
+}
+
+

@@ -1,0 +1,18 @@
+#root {
+  /* colors */
+
+  --color: #E83A4B;
+  --background: #F9F5F4;
+  --background-page: #EEEAE6;
+  --red-color: #EC2C2F;
+
+}
+
+body {
+  font-family: "Manrope", serif;
+}
+
+h1 {
+  font-family: "Lobster", serif;
+  color: var(--red-color);
+}

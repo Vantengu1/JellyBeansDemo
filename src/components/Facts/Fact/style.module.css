@@ -1,0 +1,32 @@
+.card {
+    max-width: 300px;
+    height: 100%;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    margin: 20px;
+
+    & h2 {
+        color: var(--color);
+        padding-bottom: 10px;
+        text-align: center;
+        font-size: 20px;
+        white-space: wrap;
+        overflow: hidden;
+    }
+
+    & p {
+        color: var(--color);
+        font-size: 14px;
+        text-align: center;
+        white-space: wrap;
+        padding-bottom: 5px;
+    }
+}
+
+.card:hover {
+    border: 2px solid var(--red-color);
+    background: var(--background);
+}

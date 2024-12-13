@@ -1,0 +1,25 @@
+.container {
+    width: 400px;
+    height: 300px;
+    border-radius: 20px;
+    border: 2px solid var(--red-color);
+    background: var(--background-page);
+    margin: 0 auto;
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & h1 {
+        color: var(--color);
+        margin: 20px auto;
+        font-size: 60px;
+    }
+
+    & p {
+        color: var(--red-color);
+        font-weight: 700;
+        text-decoration:underline;
+    }
+}
